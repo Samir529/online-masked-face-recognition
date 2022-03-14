@@ -1,0 +1,15 @@
+av
+click==7.1.2
+gunicorn==20.1.0
+itsdangerous==2.1.0
+Jinja2==3.0.3
+keras==2.8.0
+Keras-Preprocessing==1.1.2
+MarkupSafe==2.1.0
+numpy
+opencv-python-headless
+Pillow==9.0.1
+streamlit==0.89.0
+streamlit-webrtc
+tensorflow-cpu==2.3.0
+Werkzeug==2.0.3
