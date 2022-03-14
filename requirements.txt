@@ -9,7 +9,7 @@ MarkupSafe==2.1.0
 numpy
 opencv-python-headless
 Pillow==9.0.1
-streamlit==0.89.0
-streamlit-webrtc
+streamlit==1.7.0
+streamlit-webrtc==0.35.2
 tensorflow-cpu==2.3.0
 Werkzeug==2.0.3
