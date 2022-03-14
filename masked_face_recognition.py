@@ -51,6 +51,7 @@ def load_model():
     return model
 #app = Flask(__name__)
 
+@st.cache(allow_output_mutation=True)
 def dnn_extract_face1(img):
     net = cv2.dnn.readNetFromCaffe("deploy.prototxt", "res10_300x300_ssd_iter_140000.caffemodel")
     (height, width) = img.shape[:2]
@@ -74,11 +75,13 @@ def dnn_extract_face1(img):
             return None
 
 
+@st.cache(allow_output_mutation=True)
 class Detection(NamedTuple):
         Name: str
         Prob: float
-        
 
+
+@st.cache(allow_output_mutation=True)
 class VideoProcessor(VideoProcessorBase):
     result_queue: "queue.Queue[List[Detection]]"
     def __init__(self) -> None:
