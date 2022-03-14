@@ -11,5 +11,5 @@ opencv-python-headless
 Pillow==9.0.1
 streamlit==0.89.0
 streamlit-webrtc
-tensorflow-cpu==2.5.0
+tensorflow-cpu==2.3.0
 Werkzeug==2.0.3
