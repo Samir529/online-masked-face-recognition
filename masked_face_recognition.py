@@ -20,26 +20,26 @@ st.set_page_config(
 local_css('css/styles.css')
 
 st.markdown('<h2 align="center">Real Time Masked Face Recognition</h2>', unsafe_allow_html=True)
-hide_streamlit_style = """
-    <style>
-    ul[data-testid=main-menu-list] > li:nth-of-type(2), /* Settings */
-    ul[data-testid=main-menu-list] > li:nth-of-type(3), /* Record a screencast */
-    ul[data-testid=main-menu-list] > li:nth-of-type(4), /* Report a bug */
-    ul[data-testid=main-menu-list] > li:nth-of-type(5), /* Get help */
-    ul[data-testid=main-menu-list] > li:nth-of-type(6), /* Share this app */
-    ul[data-testid=main-menu-list] > li:nth-of-type(7), /* About */
-    ul[data-testid=main-menu-list] > li:nth-of-type(8),
-    ul[data-testid=main-menu-list] > li:nth-of-type(9),
-    ul[data-testid=main-menu-list] > li:nth-of-type(10),
-    ul[data-testid=main-menu-list] > div:nth-of-type(2), /* 2nd divider */
-    ul[data-testid=main-menu-list] > div:nth-of-type(3),
-    ul[data-testid=main-menu-list] > div:nth-of-type(4),
-    ul[data-testid=main-menu-list] > div:nth-of-type(5),
-    ul[data-testid=main-menu-list] > div:nth-of-type(6)
-    {display: none;}
-    </style>
-"""
-st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+# hide_streamlit_style = """
+#     <style>
+#     ul[data-testid=main-menu-list] > li:nth-of-type(2), /* Settings */
+#     ul[data-testid=main-menu-list] > li:nth-of-type(3), /* Record a screencast */
+#     ul[data-testid=main-menu-list] > li:nth-of-type(4), /* Report a bug */
+#     ul[data-testid=main-menu-list] > li:nth-of-type(5), /* Get help */
+#     ul[data-testid=main-menu-list] > li:nth-of-type(6), /* Share this app */
+#     ul[data-testid=main-menu-list] > li:nth-of-type(7), /* About */
+#     ul[data-testid=main-menu-list] > li:nth-of-type(8),
+#     ul[data-testid=main-menu-list] > li:nth-of-type(9),
+#     ul[data-testid=main-menu-list] > li:nth-of-type(10),
+#     ul[data-testid=main-menu-list] > div:nth-of-type(2), /* 2nd divider */
+#     ul[data-testid=main-menu-list] > div:nth-of-type(3),
+#     ul[data-testid=main-menu-list] > div:nth-of-type(4),
+#     ul[data-testid=main-menu-list] > div:nth-of-type(5),
+#     ul[data-testid=main-menu-list] > div:nth-of-type(6)
+#     {display: none;}
+#     </style>
+# """
+# st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
 
 faces = ['Abdur Samad', 'Ahsan Ahmed', 'Asef', 'Ashik', 'Azizul Hakim', 'DDS', 'Mahmud', 'Mayaz', 'Meheraj', 'Nayeem Khan', 'Nayem', 'Risul Islam Fahim', 'Saif', 'Saki', 'Samir', 'Shahtab', 'Shimul Rahman Fahad', 'Shourov', 'Shuvo', 'Sizan']

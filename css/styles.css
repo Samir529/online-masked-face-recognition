@@ -1,5 +1,5 @@
 /* Removing Main Menubar and Footer */
-/* #MainMenu {visibility: hidden;} */
+#MainMenu {visibility: hidden;}
 footer {visibility: hidden;}
 footer:after {
 	content:'Real Time Masked Face Recognition'; 
