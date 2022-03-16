@@ -1,6 +1,6 @@
 import cv2
 import numpy as np
-from tensorflow.keras.models import model_from_json   
+import tensorflow as tf
 import streamlit as st
 from streamlit_webrtc import VideoProcessorBase, webrtc_streamer,  RTCConfiguration, WebRtcMode
 from PIL import Image
@@ -46,8 +46,7 @@ faces = ['Abdur Samad', 'Ahsan Ahmed', 'Asef', 'Ashik', 'Azizul Hakim', 'DDS', '
 
 @st.cache(allow_output_mutation=True)
 def load_model():
-    model = model_from_json(open("masked_face_detector.json", "r").read())
-    model.load_weights('masked_face_detector.h5')
+    model = tf.keras.models.load_model('masked_face_detector.h5')
     return model
 #app = Flask(__name__)
 
@@ -97,7 +96,7 @@ class VideoProcessor(VideoProcessorBase):
             im = Image.fromarray(face, 'RGB')
             img_array = np.array(im)
             img_array = np.expand_dims(img_array, axis=0)
-            pred = model1.predict(img_array)
+            pred = model.predict(img_array)
             predition = np.squeeze(pred)
             predIndex = np.argmax(predition)
 
@@ -131,7 +130,7 @@ RTC_CONFIGURATION = RTCConfiguration(
 #     {"iceServers": [{"urls": ["stun:stun.xten.com:3478"]}]}
 # )
 
-model1 = load_model()
+model = load_model()
 webrtc_ctx = webrtc_streamer(key="key",
                 mode=WebRtcMode.SENDRECV,
                 rtc_configuration=RTC_CONFIGURATION,
