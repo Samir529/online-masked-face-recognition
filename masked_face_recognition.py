@@ -20,26 +20,26 @@ st.set_page_config(
 local_css('css/styles.css')
 
 st.markdown('<h2 align="center">Real Time Masked Face Recognition</h2>', unsafe_allow_html=True)
-# hide_streamlit_style = """
-#     <style>
-#     ul[data-testid=main-menu-list] > li:nth-of-type(2), /* Settings */
-#     ul[data-testid=main-menu-list] > li:nth-of-type(3), /* Record a screencast */
-#     ul[data-testid=main-menu-list] > li:nth-of-type(4), /* Report a bug */
-#     ul[data-testid=main-menu-list] > li:nth-of-type(5), /* Get help */
-#     ul[data-testid=main-menu-list] > li:nth-of-type(6), /* Share this app */
-#     ul[data-testid=main-menu-list] > li:nth-of-type(7), /* About */
-#     ul[data-testid=main-menu-list] > li:nth-of-type(8),
-#     ul[data-testid=main-menu-list] > li:nth-of-type(9),
-#     ul[data-testid=main-menu-list] > li:nth-of-type(10),
-#     ul[data-testid=main-menu-list] > div:nth-of-type(2), /* 2nd divider */
-#     ul[data-testid=main-menu-list] > div:nth-of-type(3),
-#     ul[data-testid=main-menu-list] > div:nth-of-type(4),
-#     ul[data-testid=main-menu-list] > div:nth-of-type(5),
-#     ul[data-testid=main-menu-list] > div:nth-of-type(6)
-#     {display: none;}
-#     </style>
-# """
-# st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+hide_streamlit_style = """
+    <style>
+    ul[data-testid=main-menu-list] > li:nth-of-type(2), /* Settings */
+    ul[data-testid=main-menu-list] > li:nth-of-type(3), /* Record a screencast */
+    ul[data-testid=main-menu-list] > li:nth-of-type(4), /* Report a bug */
+    ul[data-testid=main-menu-list] > li:nth-of-type(5), /* Get help */
+    ul[data-testid=main-menu-list] > li:nth-of-type(6), /* Share this app */
+    ul[data-testid=main-menu-list] > li:nth-of-type(7), /* About */
+    ul[data-testid=main-menu-list] > li:nth-of-type(8),
+    ul[data-testid=main-menu-list] > li:nth-of-type(9),
+    ul[data-testid=main-menu-list] > li:nth-of-type(10),
+    ul[data-testid=main-menu-list] > div:nth-of-type(2), /* 2nd divider */
+    ul[data-testid=main-menu-list] > div:nth-of-type(3),
+    ul[data-testid=main-menu-list] > div:nth-of-type(4),
+    ul[data-testid=main-menu-list] > div:nth-of-type(5),
+    ul[data-testid=main-menu-list] > div:nth-of-type(6)
+    {display: none;}
+    </style>
+"""
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
 
 faces = ['Abdur Samad', 'Ahsan Ahmed', 'Asef', 'Ashik', 'Azizul Hakim', 'DDS', 'Mahmud', 'Mayaz', 'Meheraj', 'Nayeem Khan', 'Nayem', 'Risul Islam Fahim', 'Saif', 'Saki', 'Samir', 'Shahtab', 'Shimul Rahman Fahad', 'Shourov', 'Shuvo', 'Sizan']
@@ -66,7 +66,7 @@ def dnn_extract_face1(img):
             (startX, startY, endX, endY) = box.astype("int")
             text = "{:.2f}%".format(confidence * 100)
             y = startY - 10 if startY - 10 > 10 else startY + 10
-            cv2.rectangle(img, (startX,startY), (endX, endY), (255, 255, 0), 2)
+            cv2.rectangle(img, (startX, startY), (endX, endY), (255, 255, 0), 2)
             cv2.putText(img, text, (startX, y),
                     cv2.FONT_HERSHEY_SIMPLEX, 0.5, (0, 255, 0), 2)
             face = img[startY:endY,startX:endX]
@@ -124,13 +124,15 @@ class VideoProcessor(VideoProcessorBase):
 #     return render_template('index.html')
 
 
-#RTC_CONFIGURATION = {"iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]}
 RTC_CONFIGURATION = RTCConfiguration(
-    {"iceServers": [{"urls": ["stun:stun.xten.com:3478"]}]}
+    {"iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]}
 )
+# RTC_CONFIGURATION = RTCConfiguration(
+#     {"iceServers": [{"urls": ["stun:stun.xten.com:3478"]}]}
+# )
 
 model1 = load_model()
-webrtc_ctx = webrtc_streamer(key="example",
+webrtc_ctx = webrtc_streamer(key="key",
                 mode=WebRtcMode.SENDRECV,
                 rtc_configuration=RTC_CONFIGURATION,
                 video_processor_factory=VideoProcessor,
