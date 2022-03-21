@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d56fa41d-8999-4438-bc7e-763ca249575c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/masked_face_recognition.py" beforeDir="false" afterPath="$PROJECT_DIR$/masked_face_recognition.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -35,9 +34,9 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="463" y="114" key="FileChooserDialogImpl" timestamp="1647280297305">
+    <state x="463" y="114" key="FileChooserDialogImpl" timestamp="1647892518138">
       <screen x="0" y="0" width="1366" height="720" />
     </state>
-    <state x="463" y="114" key="FileChooserDialogImpl/0.0.1366.720@0.0.1366.720" timestamp="1647280297305" />
+    <state x="463" y="114" key="FileChooserDialogImpl/0.0.1366.720@0.0.1366.720" timestamp="1647892518138" />
   </component>
 </project>
